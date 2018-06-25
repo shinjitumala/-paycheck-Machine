@@ -1,0 +1,208 @@
+#-------------------------
+#
+# config file for auto_type.c
+#
+#-------------------------
+#
+# written by funny.pig.run
+#
+#-------------------------
+#
+# Version v1.01
+#
+#-------------------------
+#
+# Changelog:
+#
+# v1.00 First release. Mistype feature not yet implemented. Will implement soon.
+# v1.01 Added mistype feature.
+#
+#-------------------------
+#
+# feel free to visit my YouTube channel at:
+#
+# https://www.youtube.com/channel/UCwOW6jiu1szkwNfg7z_kFSA?view_as=subscriber
+#
+#-------------------------
+#
+# Requirements: Windows and cygwin1.dll
+#
+#-------------------------
+#
+# How to use:
+#
+# It's easy!
+# 1. Put both auto_type.exe and test.txt (Or any file that has the appropriate data in it.) in the same folder.
+# 2. Configure the schedule to your liking.
+#    How the schedule data table works:
+#    schedule data starts with ":schedule" and ends with ":endschedule" so make sure to put the data in between them.
+#    The schedule for a day in a week is written between "(A day of the week)" and "(A day of the week)END". For example, for Monday it is between "MON" and "ENDMON".
+#    Here is the important part. Now, times have to be written in pairs. For example, if you want the program to type between 9am and 10:30am you must write
+#
+#    9.0
+#    10.5
+#
+#    Note that the data is written in 24 hours. So if you want to write 8:15pm it would be 20.25
+#
+#    !! WARNING !! DO NOT PUT ANY EMPTY LINES INSIDE THE DAY SCHEDULE OR THE PROGRAM CANNOT INTERPTET THE DATA.
+#
+#    !! WARNING !! ALSO MAKE SURE THAT THE TIME SHCEDULES ARE WRITTEN IN PAIRS. OTHERWISE YOU ARE GOING TO RUN IN TO PROBLEMS.
+#
+# 3. Configure the output text. This one is explained in the bottom where :data is.
+# 4. Open your command prompt. You can open it by pressing "Windows key" + "S" then type "cmd" (without the quotes) and press "Enter".
+# 5. Now use the cd command to go to the directory where you have auto_type.exe
+#    For example, if auto_type.exe is in "C:Users\Piggy\Desktop\" , then you must type "cd C:" and then type "cd Users\Piggy\Desktop"
+#    You can check the directory of the auto_type.exe by right clicking it and click properties. A new window will show up and it will show the file path.
+# 6. Now go to the command prompt and type "./auto_type.exe schedule.txt" (For advanced users: You can also use other files provided they have the appropriate data!)
+# 7. Enjoy your EZ auction money.
+#-------------------------
+
+:schedule
+MON
+6.9
+8.0
+8.3
+9.5
+10
+11.5
+11.9
+13
+13.8
+14.9
+16.7
+17.5
+18.5
+19.5
+20.0
+23.7
+ENDMON
+
+TUE
+7.2
+9.0
+9.5
+11.0
+11.5
+12.2
+14.8
+15.1
+18.7
+19.9
+20.5
+21.1
+22.0
+22.5
+ENDTUE
+
+WED
+6.5
+8.0
+12.5
+13.8
+14.1
+17.2
+19.3
+21.5
+22.1
+23.6
+ENDWED
+
+THU
+6.9
+8.0
+8.3
+9.5
+10
+11.5
+11.9
+13.3
+14.85
+15.1
+16.7
+17.5
+18.5
+19.5
+20.0
+21.1
+22.2
+23.7
+ENDTHU
+
+FRI
+6.5
+8.0
+8.2
+10.3
+12.5
+13.8
+14.1
+17.2
+19.3
+21.5
+22.1
+23.9
+ENDFRI
+
+SAT
+0
+1.5
+8.3
+10.5
+11.1
+12.0
+14.3
+16.0
+18.4
+20.1
+21.5
+23.9
+ENDSAT
+
+SUN
+0
+0.5
+9.3
+12.0
+15.3
+16.0
+18.4
+20.1
+21.5
+23.9
+ENDSUN
+
+
+:endschedule
+
+#-------------------------
+# *WARNING*
+# The data part is very sensitive. Do not change the order of the configuration or add any empty lines in between them.
+# However, you may add as many mistype strings as you like.
+#-------------------------
+:data
+string $paycheck #The string that gets typed.
+interval 0.083 #The interval which it gets typed. In hours. Example: 30 mins = 0.5 hrs, 15 mins = 0.25 hrs
+margin 0.080 #The margin which the type could be delayed. Meaning, the maximum wait time between types can be between "interval" and "interval + margin"
+mistype_chance 1 #The chance that the script will mistpye. It will automatically attempt to retype after mistyping.
+mistype_count 20 #The number of mistype examples that will be used. MAKE SURE THIS IS CORRECT OR THE PROGRAM WILL HAVE SOME PROBLEMS. Maximum of 20.
+mistype $paychel #Examples of mistypes.
+mistype $patycheck
+mistype $paycheckl
+mistype $pstxhwck
+mistype $paycheck'
+mistype WTF
+mistype TF
+mistype $pathcek
+mistype 4paycheck
+mistype $paychwck
+mistype $oaycheck
+mistype $dickcheck
+mistype $balance
+mistype $patycheck
+mistype $packeck
+mistype $[sycheck
+mistype $paycheeck
+mistype $fuckyoucheck
+mistype $work
+mistype $paychec
+:enddata
